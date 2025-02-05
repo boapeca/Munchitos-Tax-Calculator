@@ -16,7 +16,6 @@ class TaxRules
     if transaction.buyer_location == 'Spain'
       { tax: transaction.price * 0.21, type: 'VAT' }
     elsif EU_COUNTRIES.include?(transaction.buyer_location)
-      puts transaction.buyer_location
       if transaction.buyer_type == 'individual'
         vat_rate = COUNTRY_VAT_RATES[transaction.buyer_location] || 0
         { tax: transaction.price * (vat_rate / 100.0), type: 'VAT' }
@@ -24,7 +23,6 @@ class TaxRules
         { tax: 0, type: 'reverse charge' }
       end
     else
-      puts transaction.buyer_location
       { tax: 0, type: 'export' }
     end
   end

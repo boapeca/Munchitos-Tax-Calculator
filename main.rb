@@ -30,6 +30,10 @@ loop do
     service_location: service_location
   )
 
+  ## debuggin why EU countries on a goods transaction are being returned as exports 
+  puts "Checking: #{transaction.buyer_location} against EU_COUNTRIES"
+  puts "Match found: #{EU_COUNTRIES.include?(transaction.buyer_location)}"
+
 
   calculator = TaxCalculator.new(transaction)
   tax_info = calculator.calculate_tax
