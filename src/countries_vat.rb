@@ -25,7 +25,7 @@ COUNTRY_VAT_RATES = {
   "Slovakia"=> 20,
   "Slovenia"=> 22,
   "Spain"=> 21,
-  "Sweden"=> 25,
+  "Sweden"=> 25
 }.freeze
 
 EU_COUNTRIES = COUNTRY_VAT_RATES.keys.freeze
