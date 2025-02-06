@@ -7,7 +7,8 @@ class TaxesController < ApplicationController
 
   def calculate
     # Validating request
-    return unless validate_request(params)
+    errors = validate_request(params)
+    return if errors == false
 
     # Transaction object
     transaction = Transaction.new(
