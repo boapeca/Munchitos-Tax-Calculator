@@ -74,12 +74,9 @@ jobs:
       - name: Set executable permissions for bin/rails
         run: chmod +x ./bin/rails
 
-      - name: Setup Database
-        run: bin/rails db:setup
-
       - name: Migrate Database
         run: bin/rails db:migrate
-        
+
       - name: Run tests
         env:
           RAILS_ENV: test
