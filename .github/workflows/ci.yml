@@ -50,6 +50,9 @@ jobs:
       - name: Install packages
         run: sudo apt-get update && sudo apt-get install --no-install-recommends -y build-essential git pkg-config
 
+      - name: Set executable permissions for bin/rails
+        run: chmod +x bin/rails
+
       - name: Checkout code
         uses: actions/checkout@v4
 
@@ -63,4 +66,4 @@ jobs:
         env:
           RAILS_ENV: test
           # REDIS_URL: redis://localhost:6379/0
-        run: bin/rails db:test:prepare test
+        run: bin/rails db:test:prepare && bin/rails test
