@@ -34,6 +34,15 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
+      - name: Install Bundler
+        run: gem install bundler --no-document
+
+      - name: Update PATH for Bundler
+        run: echo "$HOME/.gem/ruby/3.2.0/bin" >> $GITHUB_PATH
+
+      - name: Set executable permissions for bin/rubocop
+        run: chmod +x ./bin/rubocop
+
       - name: Lint code for consistent style
         run: bin/rubocop -f github
 
