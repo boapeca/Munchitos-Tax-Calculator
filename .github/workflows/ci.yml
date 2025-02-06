@@ -58,8 +58,16 @@ jobs:
 
 
       - name: Debug bin directory
-        run: ls -l bin/
-      
+        run: ls -l bin/ || echo "bin/ directory is missing"
+
+        - name: Ensure bin/ exists
+        run: |
+          bundle exec rails app:update:bin
+          chmod +x bin/rails
+
+      - name: Install dependencies
+        run: bundle install
+
       - name: Set executable permissions for bin/rails
         run: chmod +x ./bin/rails
 
