@@ -51,7 +51,11 @@ jobs:
         run: sudo apt-get update && sudo apt-get install --no-install-recommends -y build-essential git pkg-config
       
       - name: Install Bundler
-        run: gem install bundler
+        run: gem install bundler --user-install
+
+      - name: Update PATH for Bundler
+        run: echo "$HOME/.gem/ruby/3.2.0/bin" >> $GITHUB_PATH
+
 
       - name: Debug bin directory
         run: ls -l bin/
