@@ -18,6 +18,15 @@ jobs:
         with:
           ruby-version: .ruby-version
           bundler-cache: true
+      
+      - name: Install Bundler
+        run: gem install bundler --no-document
+
+      - name: Update PATH for Bundler
+        run: echo "$HOME/.gem/ruby/3.2.0/bin" >> $GITHUB_PATH
+
+      - name: Set executable permissions for bin/brakeman
+        run: chmod +x ./bin/brakeman
 
       - name: Scan for common Rails security vulnerabilities using static analysis
         run: bin/brakeman --no-pager
