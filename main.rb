@@ -1,6 +1,6 @@
-require_relative 'tax_api/src/tax_calculator'
-require_relative 'tax_api/src/transaction'
-require_relative 'tax_api/src/countries_vat'
+require_relative 'src/tax_calculator'
+require_relative 'src/transaction'
+require_relative 'src/countries_vat'
 
 loop do
   puts 'Enter buyer location (or type "quit" to exit):'

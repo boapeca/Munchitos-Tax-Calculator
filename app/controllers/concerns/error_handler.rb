@@ -29,6 +29,13 @@ module ErrorHandler
       return false
     end
 
+    if params[:product_type] == "service-onsite"
+      if (error = validate_service_location(params[:service_location]))
+        render json: { error: error }, status: :bad_request
+        return false
+      end
+    end
+
     true  # All validations passed
   end
 
@@ -54,5 +61,10 @@ module ErrorHandler
   # validates price is above zero
   def validate_price(price)
     "Invalid price format" if price.to_f <= 0
+  end
+
+  # validates service location isnt null on service onsite
+  def validate_service_location(service_location)
+    "Service location cannot be null or missing for service-onsite products" if service_location.blank?
   end
 end
