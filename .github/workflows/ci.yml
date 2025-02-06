@@ -51,7 +51,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install --no-install-recommends -y build-essential git pkg-config
 
       - name: Set executable permissions for bin/rails
-        run: chmod +x ../bin/rails
+        run: chmod +x ../../bin/rails
 
       - name: Checkout code
         uses: actions/checkout@v4
