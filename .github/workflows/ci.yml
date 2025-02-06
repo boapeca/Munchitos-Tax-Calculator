@@ -100,3 +100,6 @@ jobs:
           RAILS_ENV: test
           # REDIS_URL: redis://localhost:6379/0
         run: bin/rails db:test:prepare && bin/rails test
+        
+      - name: Run tests 2
+        run: bundle exec rspec
