@@ -9,8 +9,9 @@ This project was to design and implement the above system, a system that is capa
 
 ## Pre-requisites
 - Ruby
+- Gem
 - Rails
-- Bundler (for managing dependencies)
+- Bundler
 
 ## Getting Started
 
@@ -19,13 +20,8 @@ After cloning the repo run:
 ``` bundle install ```
 
 
-## Start the app through console
-I start developing the app to use the console only, I've kept this here to show how the project started and how it is and the current state
-
-``` ruby .\main.rb ```
-
 ## Start the app with API
-I have then produced the API with Rails and hooked the backend together
+This will start the rails server to access the API
 
 ``` rails server ```
 
@@ -69,3 +65,10 @@ bundle exec rspec
 you might need to install rubocop with gem to run this if so run ``` gem install rubocop ```
 
 After it is installed you can simple run ``` rubocop ``` to run the lint checks
+
+## Start the app through console - deprecated
+I had started developing the app to use the console only and use the user inputs in the console,
+ I've kept this here to show how the project started and how it is and the current state.
+ Both the API and this version uses the same backend logic
+
+``` ruby .\main.rb ```
