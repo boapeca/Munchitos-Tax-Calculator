@@ -69,6 +69,6 @@ After it is installed you can simple run ``` rubocop ``` to run the lint checks
 ## Start the app through console - deprecated
 I had started developing the app to use the console only and use the user inputs in the console,
  I've kept this here to show how the project started and how it is and the current state.
- Both the API and this version uses the same backend logic
+ Both the API and this version uses the same backend logic - except the validation
 
 ``` ruby .\main.rb ```
